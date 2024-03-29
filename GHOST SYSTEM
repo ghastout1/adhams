@@ -1,0 +1,58 @@
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>الهندسة المعمارية</title>
+    </head>
+    <body>
+        <header>
+            <h1>الهندسة المعمارية</h1>
+            <p>تعتبر الهندسة المعمارية فن وعلم في تصميم وبناء الهياكل الفعّالة والجميلة التي تلبي احتياجات البشر وتعبّر عن ثقافتهم وتاريخهم.</p>
+        </header>
+        
+        <section id="history">
+            <h2>تاريخ الهندسة المعمارية</h2>
+            <p>تعود جذور الهندسة المعمارية إلى العصور القديمة، حيث بدأ الإنسان في بناء المساكن والهياكل للحماية والإقامة.</p>
+            <p>تطورت الهندسة المعمارية عبر العصور، وشهدت تقنيات وأساليب بناء مختلفة تعكس التطور الثقافي والتكنولوجي.</p>
+            <button onclick="toggleVisibility('historyDetails')">عرض/إخفاء التفاصيل</button>
+            <p id="historyDetails" style="display: none;">يمكنك هنا وضع المزيد من التفاصيل عن تاريخ الهندسة المعمارية.</p>
+        </section>
+        
+        <section>
+            <h2>مبادئ الهندسة المعمارية</h2>
+            <ul>
+                <li>توافق المباني مع البيئة الطبيعية والاجتماعية المحيطة بها.</li>
+                <li>استخدام المواد والتقنيات المناسبة لكل مشروع.</li>
+                <li>توفير الوظائف المناسبة للمستخدمين بكفاءة وجمال.</li>
+                <li>استخدام الأساليب المعمارية للتعبير عن الثقافة والهوية المحلية.</li>
+            </ul>
+        </section>
+        
+        <footer>
+            <p>© 2024 جميع الحقوق محفوظة - موقع الهندسة المعمارية</p>
+        </footer>
+    
+        <script>
+            function toggleVisibility(elementId) {
+                var element = document.getElementById(elementId);
+                if (element.style.display === "none") {
+                    element.style.display = "block";
+                } else {
+                    element.style.display = "none";
+                }
+            }
+        </script>
+    </body>
+    </html>
+    
